@@ -1,27 +1,18 @@
 # 2123
 
-This template should help get you started developing with Vue 3 in Vite.
+The project uses Vue3 Composition API. The test coverage is exemplary, only a couple of components have tests.
 
-## Recommended IDE Setup
+## Functionality
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+The project uses 2 dynamic endpoints for Posts and Todos. 
+Since Todos endpoint returns the dynamic user ids (they change according to some interval) and the requirements didn't include creating a todo, in order to ensure that there are always todos available, the user id had to be mocked.
 
-## Type Support for `.vue` Imports in TS
+## Deployment
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+The project is deployed to Github pages https://tolkera.github.io/1111/. 
+A simple Github Actions Pipeline is used to run the test https://github.com/Tolkera/1111/actions
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
-
-1. Disable the built-in TypeScript Extension
-   1. Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-   2. Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
+## Running locally
 
 ```sh
 npm install
@@ -33,20 +24,8 @@ npm install
 npm run dev
 ```
 
-### Type-Check, Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Run Unit Tests with [Vitest](https://vitest.dev/)
+### Run Unit Tests
 
 ```sh
 npm run test:unit
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
 ```
