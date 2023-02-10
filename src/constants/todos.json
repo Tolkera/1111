@@ -1,0 +1,6 @@
+{
+  "STATUS": {
+    "COMPLETED": "completed",
+    "PENDING": "pending"
+  }
+}

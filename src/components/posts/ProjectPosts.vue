@@ -1,9 +1,4 @@
 <script setup lang="ts">
-interface Post {
-  id: string;
-  title: string;
-  content: string;
-}
 import { getAllPosts } from "@/services/api/posts";
 import ProjectPost from "@/components/posts/ProjectPost.vue";
 import Error from "@/components/error/projectError.vue";
@@ -11,7 +6,9 @@ import Loader from "@/components/loader/projectLoader.vue";
 import { useFetch } from "@/composables/useFetch.js";
 import { computed, ref } from "vue";
 import POST_CONSTANTS from "@/constants/posts.json";
-const { getData, data, loading, error } = useFetch(getAllPosts, [] as Post[]);
+import type { IPost } from "@/types/Post";
+
+const { getData, data, loading, error } = useFetch(getAllPosts, [] as IPost[]);
 
 getData();
 const count = ref<number | null>(POST_CONSTANTS.PREVIEW_COUNT);

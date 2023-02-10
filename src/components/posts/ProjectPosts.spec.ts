@@ -1,7 +1,6 @@
 import { describe, it, expect, vi } from "vitest";
 import ProjectPosts from "./ProjectPosts.vue";
 import { mount, flushPromises } from "@vue/test-utils";
-
 describe("Posts", () => {
   vi.mock("@/services/api/posts", () => {
     return {
