@@ -1,12 +1,15 @@
 <script setup lang="ts">
-import { getToDos } from "@/services/api/todos";
+import TodoService from "@/services/api/todos";
 import Error from "@/components/error/projectError.vue";
 import Loader from "@/components/loader/projectLoader.vue";
 import { useFetch } from "@/composables/useFetch.js";
 import { computed, ref, inject } from "vue";
 import { ITodo } from "@/types/Todo";
 import Todo from "@/components/todos/ProjectTodo.vue";
-const { getData, data, loading, error } = useFetch(getToDos, [] as ITodo[]);
+const { getData, data, loading, error } = useFetch(
+  TodoService.getToDos,
+  [] as ITodo[]
+);
 getData();
 
 const userId = inject("user-id");
@@ -20,7 +23,10 @@ const todos = computed(() => {
   <article class="mt-10">
     <h2 class="text-2xl uppercase mb-10">Todos</h2>
     <Loader :title="`Loading Your Todos`" v-if="loading" />
-    <Error :content="`We got an error fetching your todos`" v-else-if="error" />
+    <Error
+      :content="`We got an error fetching your todos`"
+      v-else-if="!!error"
+    />
     <template v-else>
       <div class="grid gap-8 lg:grid-cols-3 md:grid-cols-2">
         <Todo
