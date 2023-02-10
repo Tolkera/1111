@@ -2,6 +2,7 @@
   "name": "2123",
   "version": "0.0.0",
   "private": true,
+  "homepage": "https://tolkera.github.io/1111/",
   "scripts": {
     "dev": "vite",
     "build": "run-p type-check build-only",
@@ -9,9 +10,12 @@
     "test:unit": "vitest --environment jsdom --root src/",
     "build-only": "vite build",
     "type-check": "vue-tsc --noEmit -p tsconfig.vitest.json --composite false",
-    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "gh-pages": "^5.0.0",
     "sass": "^1.58.0",
     "vue": "^3.2.45"
   },

@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import TodoService from "@/services/api/todos";
-import Error from "@/components/error/projectError.vue";
-import Loader from "@/components/loader/projectLoader.vue";
+import Error from "@/components/error/ProjectError.vue";
+import Loader from "@/components/loader/ProjectLoader.vue";
 import { useFetch } from "@/composables/useFetch.js";
 import { computed, ref, inject } from "vue";
-import { ITodo } from "@/types/Todo";
+import type { ITodo } from "@/types/Todo";
 import Todo from "@/components/todos/ProjectTodo.vue";
 const { getData, data, loading, error } = useFetch(
   TodoService.getToDos,

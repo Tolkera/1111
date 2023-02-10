@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import PostsService from "@/services/api/posts";
 import ProjectPost from "@/components/posts/ProjectPost.vue";
-import Error from "@/components/error/projectError.vue";
-import Loader from "@/components/loader/projectLoader.vue";
+import Error from "@/components/error/ProjectError.vue";
+import Loader from "@/components/loader/ProjectLoader.vue";
 import { useFetch } from "@/composables/useFetch.js";
 import { computed, ref } from "vue";
 import POST_CONSTANTS from "@/constants/posts.json";
